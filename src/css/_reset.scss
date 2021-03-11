@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+article, aside, header, nav, section {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ol, li {
+  list-style: none;
+}
+
+button {
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+textarea {
+  resize: vertical;
+}
