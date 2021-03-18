@@ -40,9 +40,35 @@
 
 // link
 .small_link {
-  font-size: .8rem;
+  font-size: 14px;
 
   a {
     color: $blue;
+    text-decoration: underline;
   }
+}
+
+// status-label
+.status-label,
+.status-label-small {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #fff;
+  box-shadow: $btn-shadow;
+
+  &.canceled {
+    background: $black;
+  }
+  &.requested {
+    background: $pink;
+  }
+  &.confirmed {
+    background: rgb(255, 176, 29);
+  }
+}
+
+.status-label-small {
+  font-size: 14px;
+  padding: 4px 6px;
+  box-shadow: none;
 }

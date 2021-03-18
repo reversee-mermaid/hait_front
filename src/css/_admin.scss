@@ -1,0 +1,109 @@
+#admin-app {
+  height: 100vh;
+
+  #header {
+    align-items: center;
+    justify-content: space-between;
+    height: 120px;
+    padding: 20px 40px;
+    background: $navy;
+    color: #fff;
+
+    .logo span {
+      margin-left: 20px;
+      font-size: 1.4rem;
+    }
+  }
+
+  #main {
+    flex: 1;
+    width: 100%;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  .content {
+    padding: 40px;
+  }
+  
+  .content-header {
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  
+  .content-login {
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background: $navy;
+    color: #eee;
+  }
+
+  .content-list {
+    height: 100%;
+
+    table {
+      width: 100%;
+      text-align: center;
+    }
+
+    tbody tr{
+      cursor: pointer;
+      transition: all .2s;
+    
+      &:nth-of-type(odd) {
+        background: #f6f6f6;
+      }
+    
+      &:hover {
+        background: $skyblue;
+      }
+    }
+
+    th,
+    td {
+      padding: 10px;
+
+      &:not(:last-child) {
+        border-right: 1px solid $lightgray;
+      }
+    }
+  }
+
+  .content-detail {
+    .content-header .btn {
+      box-shadow: 0 0 4px 2px rgba($color: #000000, $alpha: .3);
+      margin-left: 15px;
+
+      &:hover {
+        background: $lightgray;
+      }
+    }
+  
+    article {
+      span {
+        display: inline-block;
+      }
+
+      div {
+        padding: 20px 10px;
+        
+        &:not(:last-of-type) {
+          border-bottom: 1px solid $lightgray;
+        }
+        
+        :first-child {
+          width: 100px;
+          margin-right: 20px;
+        }
+  
+        &:last-of-type :first-child {
+          display: block;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
