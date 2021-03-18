@@ -5,6 +5,7 @@
 @import "./_component.scss";
 
 @import "./_home.scss";
+@import "./_admin.scss";
 
 body {
   font-family: 'Noto Sans KR', sans-serif;
@@ -22,6 +23,7 @@ body {
 
 .err-message {
   color: red;
+  margin-bottom: 10px;
 }
 
 .flex-row {
@@ -55,13 +57,4 @@ form {
 
 .content-title {
   margin-bottom: 30px;
-}
-
-.small-link {
-  font-size: 14px;
-
-  a {
-    color: $blue;
-    text-decoration: underline;
-  }
 }

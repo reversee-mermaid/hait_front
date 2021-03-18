@@ -29,18 +29,24 @@ export default function Application() {
   const onSubmit = (e) => {
     e.preventDefault()
 
-    sendRequest('/api/applications', 'post', data)
-      .then(json => {
-        if (json.result === 0) {
-          setErrMessage('실패!!')
-          return
+    fetch('/api/home/applications', {
+      method: 'post',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+      .then(res => {
+        if(!res.ok) {
+          setErrMessage('Failed to apply...')
+        } else {
+          history.push('/home/result')
         }
-        history.push('/home/result')
       })
   }
 
   useEffect(() => {
-    sendRequest('/api/cities')
+    sendRequest('/api/home/cities')
       .then(json => {
         const list = json.cities.map(city => (
           <option key={city.pk} value={city.pk}>{city.nm}</option>
@@ -52,7 +58,7 @@ export default function Application() {
   return (
     <section className="content content-application flex-column">
       <h2 className="content-title">서비스 사용 신청서</h2>
-
+      <p className="err-message">{errMessage}</p>
       <form onSubmit={onSubmit}>
         <input
           type="text" maxLength="50" required
@@ -86,7 +92,6 @@ export default function Application() {
 
         <button className="btn">승인신청</button>
       </form>
-      <p className="err-message">{errMessage}</p>
     </section>
   )
 }

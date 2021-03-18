@@ -83,31 +83,58 @@ textarea {
 }
 
 .small_link {
-  font-size: .8rem;
+  font-size: 14px;
 }
 
 .small_link a {
   color: #3387E9;
+  text-decoration: underline;
+}
+
+.status-label,
+.status-label-small {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #fff;
+  -webkit-box-shadow: 0 0 4px rgba(102, 102, 102, 0.4);
+          box-shadow: 0 0 4px rgba(102, 102, 102, 0.4);
+}
+
+.status-label.canceled,
+.status-label-small.canceled {
+  background: #666;
+}
+
+.status-label.requested,
+.status-label-small.requested {
+  background: #EC9494;
+}
+
+.status-label.confirmed,
+.status-label-small.confirmed {
+  background: #ffb01d;
+}
+
+.status-label-small {
+  font-size: 14px;
+  padding: 4px 6px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 #home-app {
   height: 100vh;
 }
 
-#home-app > * {
-  height: 120px;
-  padding: 0 40px;
-}
-
 #home-app #header {
+  height: 120px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px 40px;
   background: #DEEDEF;
 }
 
@@ -124,16 +151,22 @@ textarea {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  padding-top: 50px;
-  padding-bottom: 50px;
   text-align: center;
 }
 
-#home-app #main form {
+#home-app form {
   margin: 0 auto;
 }
 
-#home-app #main .content-index .btn {
+#home-app .content {
+  padding: 40px;
+}
+
+#home-app .content-index {
+  margin-top: 40px;
+}
+
+#home-app .content-index .btn {
   margin: 0 10px;
   background: #C4C4C4;
 }
@@ -149,6 +182,131 @@ textarea {
 #home-app .content-application p,
 #home-app .content-result p {
   line-height: 2rem;
+}
+
+#home-app .content-application .content-title {
+  margin-bottom: 10px;
+}
+
+#admin-app {
+  height: 100vh;
+}
+
+#admin-app #header {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 120px;
+  padding: 20px 40px;
+  background: #4A5770;
+  color: #fff;
+}
+
+#admin-app #header .logo span {
+  margin-left: 20px;
+  font-size: 1.4rem;
+}
+
+#admin-app #main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+}
+
+#admin-app table {
+  border-collapse: collapse;
+}
+
+#admin-app .content {
+  padding: 40px;
+}
+
+#admin-app .content-header {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+#admin-app .content-login {
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #4A5770;
+  color: #eee;
+}
+
+#admin-app .content-list {
+  height: 100%;
+}
+
+#admin-app .content-list table {
+  width: 100%;
+  text-align: center;
+}
+
+#admin-app .content-list tbody tr {
+  cursor: pointer;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+#admin-app .content-list tbody tr:nth-of-type(odd) {
+  background: #f6f6f6;
+}
+
+#admin-app .content-list tbody tr:hover {
+  background: #DEEDEF;
+}
+
+#admin-app .content-list th,
+#admin-app .content-list td {
+  padding: 10px;
+}
+
+#admin-app .content-list th:not(:last-child),
+#admin-app .content-list td:not(:last-child) {
+  border-right: 1px solid #C4C4C4;
+}
+
+#admin-app .content-detail .content-header .btn {
+  -webkit-box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.3);
+  margin-left: 15px;
+}
+
+#admin-app .content-detail .content-header .btn:hover {
+  background: #C4C4C4;
+}
+
+#admin-app .content-detail article span {
+  display: inline-block;
+}
+
+#admin-app .content-detail article div {
+  padding: 20px 10px;
+}
+
+#admin-app .content-detail article div:not(:last-of-type) {
+  border-bottom: 1px solid #C4C4C4;
+}
+
+#admin-app .content-detail article div :first-child {
+  width: 100px;
+  margin-right: 20px;
+}
+
+#admin-app .content-detail article div:last-of-type :first-child {
+  display: block;
+  margin-bottom: 20px;
 }
 
 body {
@@ -167,6 +325,7 @@ body {
 
 .err-message {
   color: red;
+  margin-bottom: 10px;
 }
 
 .flex-row {
@@ -211,14 +370,5 @@ form button:hover {
 
 .content-title {
   margin-bottom: 30px;
-}
-
-.small-link {
-  font-size: 14px;
-}
-
-.small-link a {
-  color: #3387E9;
-  text-decoration: underline;
 }
 /*# sourceMappingURL=index.css.map */

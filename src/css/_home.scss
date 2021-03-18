@@ -1,16 +1,11 @@
 #home-app {
   height: 100vh;
 
-  & > * {
-    height: 120px;
-    padding: 0 40px;
-  }
-
   #header {
+    height: 120px;
     align-items: center;
     justify-content: space-between;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px 40px;
     background: $skyblue;
 
     .gnb .btn:hover {
@@ -25,19 +20,22 @@
 
   #main {
     flex: 1;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    text-align: center;
+    text-align: center;    
+  }
 
-    form {
-      margin: 0 auto;
-    }
+  form {
+    margin: 0 auto;
+  }
 
-    .content-index {
-      .btn {
-        margin: 0 10px;
-        background: $lightgray;
-      }
+  .content {
+    padding: 40px;
+  }
+  
+  .content-index {
+    margin-top: 40px;
+    .btn {
+      margin: 0 10px;
+      background: $lightgray;
     }
   }
 
@@ -49,5 +47,9 @@
     p {
       line-height: 2rem;
     }
+  }
+
+  .content-application .content-title {
+    margin-bottom: 10px;
   }
 }
