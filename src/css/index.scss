@@ -6,11 +6,12 @@
 
 @import "./_home.scss";
 @import "./_admin.scss";
+@import "./customer";
 
 body {
   font-family: 'Noto Sans KR', sans-serif;
   color: $black;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .logo {
@@ -50,6 +51,14 @@ form {
     border-radius: 5px;
   }
 
+  label {
+    border: none;
+
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+  }
+
   button:hover {
     background: $yellow;
   }
@@ -57,4 +66,8 @@ form {
 
 .content-title {
   margin-bottom: 30px;
+}
+
+.profile-img {
+  background: url("../default.jpg") no-repeat center/cover;
 }

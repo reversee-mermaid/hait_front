@@ -1,0 +1,268 @@
+#customer-app {
+  height: 100vh;
+  overflow: hidden;
+
+  #main {
+    flex: 1;
+    width: 100%;
+    overflow: inherit;
+    // padding-bottom: 20px;
+  }
+
+  #header {
+    padding: 20px;
+    text-align: center;
+
+    h1 {
+      height: 80px;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    h2 {
+      font-weight: 300;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+  }
+
+  .content {
+    height: 100%;
+    overflow-y: scroll;
+    padding: 20px;
+  }
+
+  .content-visual {
+    background: url("./background.svg") no-repeat center/cover;
+    height: 100%;
+
+    .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-size: 140%;
+      max-width: 80%;
+      width: 300px;
+      color: #333;
+    }
+
+    .btn {
+      position: absolute;
+      bottom: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: $yellow;
+    }
+  }
+
+  .search-form {
+    justify-content: space-between;
+    padding: 0 20px 10px;
+    height: 40px;
+    box-shadow: $card-shadow;
+
+    input {
+      width: 70%;
+      padding: 0 5px;
+      margin-right: 15px;
+    }
+
+    select {
+      width: 30%;
+    }
+  }
+
+  .content-list {
+    .list-item {
+      display: flex;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: $card-shadow;
+
+      img {
+        width: 90px;
+        height: 90px;
+        border-radius: 5px;
+        object-fit: cover;
+        margin-right: 15px;
+      }
+
+      .info {
+        flex: 1 auto 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        font-size: 14px;
+        overflow: hidden;
+        white-space: nowrap;
+
+        :first-child {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .content-detail {
+    text-align: center;
+    overflow: visible;
+
+    .btn {
+      display: block;
+      max-width: 400px;
+      margin: 0 auto;
+      background: $yellow;
+    }
+
+    .card-container {
+      position: relative;
+      left: 20px;
+      display: flex;
+      justify-content: center;
+      font-weight: 500;
+
+      > * {
+        max-width: 200px;
+        max-height: 200px;
+        width: 40vw;
+        height: 40vw;
+      }
+    }
+
+    .realtime-total {
+      position: relative;
+      left: -40px;
+
+      strong {
+        margin-bottom: 5px;
+        line-height: 90%;
+        font-size: 4rem;
+        color: #378ba6;
+      }
+    }
+
+    .info {
+      text-align: left;
+      width: 80%;
+      max-width: 400px;
+      margin: 40px auto;
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      i {
+        display: inline-block;
+        width: 1rem;
+        text-align: center;
+        margin-right: 5px;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .content-reserv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .info {
+      text-align: center;
+
+      .card {
+        margin: 0 auto;
+      }
+
+      p {
+        margin: 20px 0;
+        font-size: 18px;
+      }
+    }
+
+    form {
+      margin: 0 auto;
+
+      > * {
+        display: block;
+        width: 100%;
+        // margin-top: 15px;
+      }
+
+      .btn {
+        background: $yellow;
+      }
+    }
+  }
+
+  .content-result {
+    /* reserv result */
+
+    > div {
+      width: 80%;
+      max-width: 400px;
+      line-height: 2rem;
+      margin: 30px auto;
+    }
+    
+    .main-info {
+      position: relative;
+      text-align: center;
+      font-size: 16px;
+      padding-bottom: 30px;
+    }
+
+    .rstrnt-nm {
+      font-size: 1.4rem;
+    }
+
+    .reserv-no {
+      color: #378ba6;
+      font-size: 4rem;
+      line-height: 120%;
+    }
+
+    small {
+      position: relative;
+      margin-top: 10px;
+      display: block;
+      font-weight: 200;
+      
+      ::after {
+        content: "";
+        width: 40%;
+        height: 1px;
+        background: #aaa;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    h3 {
+      text-align: center;
+    }
+
+    .reserv-info {
+      padding-bottom: 20px;
+      position: relative;
+
+      ::after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background: #aaa;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

@@ -51,8 +51,8 @@ textarea {
   padding: 20px;
   overflow: hidden;
   background: #ffffff;
-  -webkit-box-shadow: 0px 0px 10px rgba(102, 102, 102, 0.25);
-          box-shadow: 0px 0px 10px rgba(102, 102, 102, 0.25);
+  -webkit-box-shadow: 0px 0px 4px rgba(102, 102, 102, 0.6);
+          box-shadow: 0px 0px 4px rgba(102, 102, 102, 0.6);
   border-radius: 5px;
 }
 
@@ -309,10 +309,309 @@ textarea {
   margin-bottom: 20px;
 }
 
+#customer-app {
+  height: 100vh;
+  overflow: hidden;
+}
+
+#customer-app #main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+  overflow: inherit;
+}
+
+#customer-app #header {
+  padding: 20px;
+  text-align: center;
+}
+
+#customer-app #header h1 {
+  height: 80px;
+}
+
+#customer-app #header h1 img {
+  height: 100%;
+}
+
+#customer-app #header h2 {
+  font-weight: 300;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+#customer-app .content {
+  height: 100%;
+  overflow-y: scroll;
+  padding: 20px;
+}
+
+#customer-app .content-visual {
+  background: url("./background.svg") no-repeat center/cover;
+  height: 100%;
+}
+
+#customer-app .content-visual .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 140%;
+  max-width: 80%;
+  width: 300px;
+  color: #333;
+}
+
+#customer-app .content-visual .btn {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: #FFF48F;
+}
+
+#customer-app .search-form {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 20px 10px;
+  height: 40px;
+  -webkit-box-shadow: 0px 0px 4px rgba(102, 102, 102, 0.6);
+          box-shadow: 0px 0px 4px rgba(102, 102, 102, 0.6);
+}
+
+#customer-app .search-form input {
+  width: 70%;
+  padding: 0 5px;
+  margin-right: 15px;
+}
+
+#customer-app .search-form select {
+  width: 30%;
+}
+
+#customer-app .content-list .list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 4px rgba(102, 102, 102, 0.6);
+          box-shadow: 0px 0px 4px rgba(102, 102, 102, 0.6);
+}
+
+#customer-app .content-list .list-item img {
+  width: 90px;
+  height: 90px;
+  border-radius: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 15px;
+}
+
+#customer-app .content-list .list-item .info {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 auto 100%;
+          flex: 1 auto 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#customer-app .content-list .list-item .info :first-child {
+  font-size: 16px;
+}
+
+#customer-app .content-detail {
+  text-align: center;
+  overflow: visible;
+}
+
+#customer-app .content-detail .btn {
+  display: block;
+  max-width: 400px;
+  margin: 0 auto;
+  background: #FFF48F;
+}
+
+#customer-app .content-detail .card-container {
+  position: relative;
+  left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: 500;
+}
+
+#customer-app .content-detail .card-container > * {
+  max-width: 200px;
+  max-height: 200px;
+  width: 40vw;
+  height: 40vw;
+}
+
+#customer-app .content-detail .realtime-total {
+  position: relative;
+  left: -40px;
+}
+
+#customer-app .content-detail .realtime-total strong {
+  margin-bottom: 5px;
+  line-height: 90%;
+  font-size: 4rem;
+  color: #378ba6;
+}
+
+#customer-app .content-detail .info {
+  text-align: left;
+  width: 80%;
+  max-width: 400px;
+  margin: 40px auto;
+}
+
+#customer-app .content-detail .info h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#customer-app .content-detail .info i {
+  display: inline-block;
+  width: 1rem;
+  text-align: center;
+  margin-right: 5px;
+  margin-top: 10px;
+}
+
+#customer-app .content-reserv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#customer-app .content-reserv .info {
+  text-align: center;
+}
+
+#customer-app .content-reserv .info .card {
+  margin: 0 auto;
+}
+
+#customer-app .content-reserv .info p {
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+#customer-app .content-reserv form {
+  margin: 0 auto;
+}
+
+#customer-app .content-reserv form > * {
+  display: block;
+  width: 100%;
+}
+
+#customer-app .content-reserv form .btn {
+  background: #FFF48F;
+}
+
+#customer-app .content-result {
+  /* reserv result */
+}
+
+#customer-app .content-result > div {
+  width: 80%;
+  max-width: 400px;
+  line-height: 2rem;
+  margin: 30px auto;
+}
+
+#customer-app .content-result .main-info {
+  position: relative;
+  text-align: center;
+  font-size: 16px;
+  padding-bottom: 30px;
+}
+
+#customer-app .content-result .rstrnt-nm {
+  font-size: 1.4rem;
+}
+
+#customer-app .content-result .reserv-no {
+  color: #378ba6;
+  font-size: 4rem;
+  line-height: 120%;
+}
+
+#customer-app .content-result small {
+  position: relative;
+  margin-top: 10px;
+  display: block;
+  font-weight: 200;
+}
+
+#customer-app .content-result small ::after {
+  content: "";
+  width: 40%;
+  height: 1px;
+  background: #aaa;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+#customer-app .content-result h3 {
+  text-align: center;
+}
+
+#customer-app .content-result .reserv-info {
+  padding-bottom: 20px;
+  position: relative;
+}
+
+#customer-app .content-result .reserv-info ::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #aaa;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
 body {
   font-family: 'Noto Sans KR', sans-serif;
   color: #666;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .logo {
@@ -364,11 +663,23 @@ form > * {
   border-radius: 5px;
 }
 
+form label {
+  border: none;
+}
+
+form label input[type="checkbox"] {
+  margin-right: 10px;
+}
+
 form button:hover {
   background: #FFF48F;
 }
 
 .content-title {
   margin-bottom: 30px;
+}
+
+.profile-img {
+  background: url("../default.jpg") no-repeat center/cover;
 }
 /*# sourceMappingURL=index.css.map */
