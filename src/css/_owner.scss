@@ -1,0 +1,244 @@
+#owner-app {
+  height: 100vh;
+  overflow: hidden;
+
+  #header {
+    height: 60px;
+    padding: 0 20px;
+    background: $skyblue;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    > div > * {
+      display: inline-block;
+    }
+
+    .aside-btn {
+      padding: 20px;
+      background: none;
+    }
+
+    .state-btn:hover .state-btn-list {
+      display: block;
+    }
+
+    .state-btn-list {
+      display: none;
+    }
+
+    .state-btn-container {
+      margin-left: 20px;
+      position: relative;
+
+      &:hover > ul {
+        display: block;
+      }
+
+      > ul {
+        padding: 10px 0;
+        position: absolute;
+        display: none;
+
+        > * {
+          margin: 5px 0;
+        }
+      }
+    }
+  }
+
+  #main {
+    flex: 1;
+    height: calc(100vh - 60px);
+  }
+
+  .content-login,
+  .content-initial {
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content-initial {
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+
+      + small {
+        color: $blue;
+        margin-bottom: 20px;
+      }
+    }
+    .card {
+      margin: 20px auto;
+      padding: 0;
+      background: red;
+    }
+  }
+
+  .aside {
+    position: absolute;
+    left: -240px;
+    width: 240px;
+    padding: 40px;
+    height: 400px;
+    background: $skyblue;
+    transition: all .3s;
+    
+    &.show,
+    &:hover {
+      left: 0;
+    }
+    
+    &.locked {
+      height: 100%;
+      position: static;
+    }
+  }
+
+  .content {
+    flex: 1;
+    padding: 20px;
+    height: 100%;
+  }
+
+  .content-close {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    line-height: 4rem;
+  }
+
+  .content-open {
+    display: flex;
+    align-items: center;
+  }
+  
+  .list {
+    flex: 1;
+    height: calc(60%);
+    overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding-bottom: 40px;
+
+    &::-webkit-scrollbar {
+      display: block;
+      width: 0;
+    }
+
+    .list-item {
+      flex-grow: 1;
+      flex-shrink: 0;
+      flex-basis: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 30px 20px;
+      margin: 10px;
+      height: 140px;
+      text-align: center;
+      cursor: pointer;
+      transition: all .3s;
+
+      &:hover {
+        background: $yellow;
+      }
+
+      .reserv-no {
+        font-weight: 600;
+        font-size: 1.6rem;
+      }
+
+      .reserv-waittime {
+        margin-top: 5px;
+        color: #A5A5A5;
+      }
+    }
+  }
+
+  .info {
+    flex-basis: 300px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .realtime-total {
+      margin: 0 auto 40px;
+      width: 200px;
+      height: 200px;
+      font-size: 1rem;
+
+      strong {
+        margin-bottom: 5px;
+        line-height: 90%;
+        font-size: 5rem;
+        color: #378ba6;
+      }
+    }
+
+    .detail {
+      padding: 30px;
+      height: 240px;
+
+      > * {
+        margin-bottom: 10px;
+      }
+
+      .detail-no {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .detail-headcount,
+      .detail-contact {
+        font-size: 18px;
+      }
+
+      .detail-regtime,
+      .detail-waittime {
+        font-weight: 300;
+        margin-bottom: 5px;
+      }
+
+    }
+
+    .btn-container {
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .reserv-btn {
+      flex: 1;
+      margin-right: 15px;
+      font-size: 18px;
+      color: #fff;
+      height: 48px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    
+      &:nth-of-type(1) {
+        background: #EC5D5D;
+      }
+      &:nth-of-type(2) {
+        background: #6d6d6d;
+      }
+      &:nth-of-type(3) {
+        background: #3387E9;
+      }
+    }
+  }
+
+  .logout-link {
+    cursor: pointer;
+  }
+}

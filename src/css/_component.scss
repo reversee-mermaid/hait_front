@@ -49,6 +49,7 @@
 }
 
 // status-label
+.state-label,
 .status-label,
 .status-label-small {
   padding: 5px 10px;
@@ -65,10 +66,25 @@
   &.confirmed {
     background: rgb(255, 176, 29);
   }
+
+  &.close {
+    background: #E56A6A;
+  }
+  &.open {
+    background: #ffb224;
+  }
+  &.break {
+    background: #808080;
+  }
 }
 
 .status-label-small {
   font-size: 14px;
   padding: 4px 6px;
   box-shadow: none;
+}
+
+.state-label {
+  font-weight: 600;
+  text-shadow: 0 0 3px rgba($color: #000000, $alpha: 1.0);
 }
