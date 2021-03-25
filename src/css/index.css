@@ -91,6 +91,7 @@ textarea {
   text-decoration: underline;
 }
 
+.state-label,
 .status-label,
 .status-label-small {
   padding: 5px 10px;
@@ -100,19 +101,40 @@ textarea {
           box-shadow: 0 0 4px rgba(102, 102, 102, 0.4);
 }
 
+.state-label.canceled,
 .status-label.canceled,
 .status-label-small.canceled {
   background: #666;
 }
 
+.state-label.requested,
 .status-label.requested,
 .status-label-small.requested {
   background: #EC9494;
 }
 
+.state-label.confirmed,
 .status-label.confirmed,
 .status-label-small.confirmed {
   background: #ffb01d;
+}
+
+.state-label.close,
+.status-label.close,
+.status-label-small.close {
+  background: #E56A6A;
+}
+
+.state-label.open,
+.status-label.open,
+.status-label-small.open {
+  background: #ffb224;
+}
+
+.state-label.break,
+.status-label.break,
+.status-label-small.break {
+  background: #808080;
 }
 
 .status-label-small {
@@ -120,6 +142,11 @@ textarea {
   padding: 4px 6px;
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+
+.state-label {
+  font-weight: 600;
+  text-shadow: 0 0 3px black;
 }
 
 #home-app {
@@ -606,6 +633,307 @@ textarea {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+}
+
+#owner-app {
+  height: 100vh;
+  overflow: hidden;
+}
+
+#owner-app #header {
+  height: 60px;
+  padding: 0 20px;
+  background: #DEEDEF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#owner-app #header > div > * {
+  display: inline-block;
+}
+
+#owner-app #header .aside-btn {
+  padding: 20px;
+  background: none;
+}
+
+#owner-app #header .state-btn:hover .state-btn-list {
+  display: block;
+}
+
+#owner-app #header .state-btn-list {
+  display: none;
+}
+
+#owner-app #header .state-btn-container {
+  margin-left: 20px;
+  position: relative;
+}
+
+#owner-app #header .state-btn-container:hover > ul {
+  display: block;
+}
+
+#owner-app #header .state-btn-container > ul {
+  padding: 10px 0;
+  position: absolute;
+  display: none;
+}
+
+#owner-app #header .state-btn-container > ul > * {
+  margin: 5px 0;
+}
+
+#owner-app #main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: calc(100vh - 60px);
+}
+
+#owner-app .content-login,
+#owner-app .content-initial {
+  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#owner-app .content-initial h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+#owner-app .content-initial h2 + small {
+  color: #3387E9;
+  margin-bottom: 20px;
+}
+
+#owner-app .content-initial .card {
+  margin: 20px auto;
+  padding: 0;
+  background: url("./default.jpg") no-repeat center/cover;
+}
+
+#owner-app .aside {
+  position: absolute;
+  left: -240px;
+  width: 240px;
+  padding: 40px;
+  height: 400px;
+  background: #DEEDEF;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+#owner-app .aside.show, #owner-app .aside:hover {
+  left: 0;
+}
+
+#owner-app .aside.locked {
+  height: 100%;
+  position: static;
+}
+
+#owner-app .content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 20px;
+  height: 100%;
+}
+
+#owner-app .content-close {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2rem;
+  line-height: 4rem;
+}
+
+#owner-app .content-open {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#owner-app .list {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: calc(60%);
+  overflow-y: scroll;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  padding-bottom: 40px;
+}
+
+#owner-app .list::-webkit-scrollbar {
+  display: block;
+  width: 0;
+}
+
+#owner-app .list .list-item {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -ms-flex-preferred-size: 160px;
+      flex-basis: 160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 30px 20px;
+  margin: 10px;
+  height: 140px;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+#owner-app .list .list-item:hover {
+  background: #FFF48F;
+}
+
+#owner-app .list .list-item .reserv-no {
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+#owner-app .list .list-item .reserv-waittime {
+  margin-top: 5px;
+  color: #A5A5A5;
+}
+
+#owner-app .info {
+  -ms-flex-preferred-size: 300px;
+      flex-basis: 300px;
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#owner-app .info .realtime-total {
+  margin: 0 auto 40px;
+  width: 200px;
+  height: 200px;
+  font-size: 1rem;
+}
+
+#owner-app .info .realtime-total strong {
+  margin-bottom: 5px;
+  line-height: 90%;
+  font-size: 5rem;
+  color: #378ba6;
+}
+
+#owner-app .info .detail {
+  padding: 30px;
+  height: 240px;
+}
+
+#owner-app .info .detail > * {
+  margin-bottom: 10px;
+}
+
+#owner-app .info .detail .detail-no {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+#owner-app .info .detail .detail-headcount,
+#owner-app .info .detail .detail-contact {
+  font-size: 18px;
+}
+
+#owner-app .info .detail .detail-regtime,
+#owner-app .info .detail .detail-waittime {
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+
+#owner-app .info .btn-container {
+  margin-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#owner-app .info .reserv-btn {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-right: 15px;
+  font-size: 18px;
+  color: #fff;
+  height: 48px;
+}
+
+#owner-app .info .reserv-btn:last-of-type {
+  margin-right: 0;
+}
+
+#owner-app .info .reserv-btn:nth-of-type(1) {
+  background: #EC5D5D;
+}
+
+#owner-app .info .reserv-btn:nth-of-type(2) {
+  background: #6d6d6d;
+}
+
+#owner-app .info .reserv-btn:nth-of-type(3) {
+  background: #3387E9;
+}
+
+#owner-app .logout-link {
+  cursor: pointer;
 }
 
 body {

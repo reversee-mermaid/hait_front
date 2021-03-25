@@ -17,3 +17,10 @@ export default function sendRequest(input, method, data) {
       .then(res => res.json())
   )
 }
+
+export const method = {
+  GET: 'get',
+  POST: 'post',
+  PUT: 'put',
+  DELETE: 'delete'
+}
