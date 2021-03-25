@@ -722,7 +722,7 @@ textarea {
 #owner-app .content-initial .card {
   margin: 20px auto;
   padding: 0;
-  background: red;
+  background: url("./default.jpg") no-repeat center/cover;
 }
 
 #owner-app .aside {
