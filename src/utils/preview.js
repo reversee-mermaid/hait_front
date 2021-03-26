@@ -6,7 +6,7 @@ export function setPreview(container, file) {
 		container.appendChild(img)
 	}
 	
-	if(file.constructor == File) {
+	if(file.constructor === File) {
 		img.src = URL.createObjectURL(file)	
 	} else {
 		img.src = file

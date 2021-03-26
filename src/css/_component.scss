@@ -22,6 +22,7 @@
   border-radius: 5px;
   
   &.card-circle {
+    padding: 0;
     width: 140px;
     height: 140px;
     border-radius: 100%;
@@ -87,4 +88,8 @@
 .state-label {
   font-weight: 600;
   text-shadow: 0 0 3px rgba($color: #000000, $alpha: 1.0);
+}
+
+.MuiSvgIcon-root {
+  margin-right: 10px;
 }

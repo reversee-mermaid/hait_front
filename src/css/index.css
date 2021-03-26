@@ -57,6 +57,7 @@ textarea {
 }
 
 .card.card-circle {
+  padding: 0;
   width: 140px;
   height: 140px;
   border-radius: 100%;
@@ -147,6 +148,10 @@ textarea {
 .state-label {
   font-weight: 600;
   text-shadow: 0 0 3px black;
+}
+
+.MuiSvgIcon-root {
+  margin-right: 10px;
 }
 
 #home-app {
@@ -440,6 +445,8 @@ textarea {
   -o-object-fit: cover;
      object-fit: cover;
   margin-right: 15px;
+  -webkit-box-shadow: 0px 0px 4px rgba(102, 102, 102, 0.6);
+          box-shadow: 0px 0px 4px rgba(102, 102, 102, 0.6);
 }
 
 #customer-app .content-list .list-item .info {
@@ -513,19 +520,11 @@ textarea {
   width: 80%;
   max-width: 400px;
   margin: 40px auto;
+  line-height: 3rem;
 }
 
 #customer-app .content-detail .info h2 {
   text-align: center;
-  margin-bottom: 20px;
-}
-
-#customer-app .content-detail .info i {
-  display: inline-block;
-  width: 1rem;
-  text-align: center;
-  margin-right: 5px;
-  margin-top: 10px;
 }
 
 #customer-app .content-reserv {
@@ -730,10 +729,11 @@ textarea {
   left: -240px;
   width: 240px;
   padding: 40px;
-  height: 400px;
   background: #DEEDEF;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  line-height: 3rem;
+  font-size: 1rem;
 }
 
 #owner-app .aside.show, #owner-app .aside:hover {
@@ -745,12 +745,18 @@ textarea {
   position: static;
 }
 
+#owner-app .aside .card {
+  margin: 20px auto;
+}
+
 #owner-app .content {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   padding: 20px;
   height: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 #owner-app .content-close {
@@ -802,13 +808,11 @@ textarea {
 }
 
 #owner-app .list .list-item {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  -ms-flex-preferred-size: 160px;
-      flex-basis: 160px;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-preferred-size: calc(960px / 4);
+      flex-basis: calc(960px / 4);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -822,12 +826,16 @@ textarea {
   height: 140px;
   text-align: center;
   cursor: pointer;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 #owner-app .list .list-item:hover {
   background: #FFF48F;
+}
+
+#owner-app .list .list-item.called {
+  background: #b9e0e6;
 }
 
 #owner-app .list .list-item .reserv-no {
@@ -837,7 +845,7 @@ textarea {
 
 #owner-app .list .list-item .reserv-waittime {
   margin-top: 5px;
-  color: #A5A5A5;
+  color: #a5a5a5;
 }
 
 #owner-app .info {
@@ -904,6 +912,27 @@ textarea {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: relative;
+}
+
+#owner-app .info .cancel-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  width: 30%;
+}
+
+#owner-app .info .cancel-menu.show {
+  display: block;
+}
+
+#owner-app .info .cancel-menu li {
+  background: #ec5d5d40;
+  padding: 10px;
+  margin: 5px 0;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 #owner-app .info .reserv-btn {
@@ -921,7 +950,7 @@ textarea {
 }
 
 #owner-app .info .reserv-btn:nth-of-type(1) {
-  background: #EC5D5D;
+  background: #ec5d5d;
 }
 
 #owner-app .info .reserv-btn:nth-of-type(2) {
@@ -929,11 +958,103 @@ textarea {
 }
 
 #owner-app .info .reserv-btn:nth-of-type(3) {
-  background: #3387E9;
+  background: #3387e9;
 }
 
 #owner-app .logout-link {
   cursor: pointer;
+}
+
+#owner-app .content-setting {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow-y: scroll;
+}
+
+#owner-app .content-setting::-webkit-scrollbar {
+  display: none;
+}
+
+#owner-app .content-setting .inner {
+  width: 480px;
+  margin: 40px auto 20px;
+}
+
+#owner-app .content-setting .inner > *:not(:last-child) {
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid currentColor;
+}
+
+#owner-app .content-setting .small_link {
+  text-align: center;
+}
+
+#owner-app .content-setting h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#owner-app .content-setting .static-info p {
+  line-height: 3rem;
+}
+
+#owner-app .content-setting .more-info-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 20px;
+  height: 160px;
+  max-width: 100%;
+}
+
+#owner-app .content-setting .more-info-form textarea {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+#owner-app .content-setting .profile-form {
+  position: relative;
+  margin: 0 auto;
+  width: 160px;
+  height: 160px;
+  margin-bottom: 20px;
+}
+
+#owner-app .content-setting .profile-form .card {
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+}
+
+#owner-app .content-setting .profile-form input {
+  display: none;
+}
+
+#owner-app .content-setting .profile-form label {
+  position: absolute;
+  right: -20%;
+  bottom: -5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background: #efefef;
+  border: 1px solid #c4c4c4;
+  cursor: pointer;
+}
+
+#owner-app .content-setting button {
+  margin: 0;
 }
 
 body {
