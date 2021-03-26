@@ -2,6 +2,10 @@ import { useContext, useEffect, useMemo, useState } from "react"
 import { useParams, useRouteMatch } from "react-router"
 import { Link } from "react-router-dom"
 
+import LocationOnRoundedIcon from '@material-ui/icons/LocationOnRounded'
+import CallRoundedIcon from '@material-ui/icons/CallRounded'
+import CommentIcon from '@material-ui/icons/Comment';
+
 import { pagenameContext } from './Main'
 import { api } from "../utils/customer-api"
 
@@ -12,6 +16,7 @@ export default function Detail() {
 
   const [data, setData] = useState({})
   const {
+    pk,
     profile_img,
     realtime_total,
     nm,
@@ -36,7 +41,7 @@ export default function Detail() {
         <div className="card card-circle profile-img">
           {
             profile_img &&
-            <img src={profile_img} alt="profile" />
+            <img src={`/resources/img/rstrnt/${pk}/${profile_img}`} alt="profile" />
           }
         </div>
         <div className="card card-circle realtime-total">
@@ -47,9 +52,9 @@ export default function Detail() {
       </div>
       <div className="info">
         <h2>{nm}</h2>
-        <p><i>📍</i>{location}</p>
-        <p><i>📞</i>{contact}</p>
-        <p><i>📝</i>{more_info}</p>
+        <p><LocationOnRoundedIcon/>{location}</p>
+        <p><CallRoundedIcon/>{contact}</p>
+        <p><CommentIcon/>{more_info}</p>
       </div>
       <Link className="btn" to={`${url}/reserv`}>예약하기</Link>
     </section>

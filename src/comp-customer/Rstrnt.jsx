@@ -1,10 +1,12 @@
 import { useContext, useEffect, useState } from "react"
 import { useHistory } from "react-router"
 
+import RestaurantMenuRoundedIcon from '@material-ui/icons/RestaurantMenuRounded'
+import LocationOnRoundedIcon from '@material-ui/icons/LocationOnRounded'
+import CallRoundedIcon from '@material-ui/icons/CallRounded'
+
 import { api } from "../utils/customer-api"
 import { pagenameContext } from './Main'
-
-import img from '../default.jpg'
 
 export default function List() {
   const { setPagename } = useContext(pagenameContext)
@@ -58,13 +60,14 @@ function Item({ data }) {
   const onClick = () => {
     history.push(`/customer/restaurants/${pk}`)
   }
+
   return (
     <li className="list-item" onClick={onClick}>
-      <img src={img} alt={`${nm} - profile image`} />
+      <img src={`/resources/img/rstrnt/${pk}/${profile_img}`} alt={`${nm} - profile image`} />
       <div className="info">
-        <strong>{nm}</strong>
-        <p>{location}</p>
-        <p>{contact}</p>
+        <strong><RestaurantMenuRoundedIcon/>{nm}</strong>
+        <p><LocationOnRoundedIcon/>{location}</p>
+        <p><CallRoundedIcon/>{contact}</p>
       </div>
     </li>
   )
