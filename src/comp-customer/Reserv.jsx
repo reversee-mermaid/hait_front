@@ -53,7 +53,7 @@ export default function Reserv() {
         <div className="card card-circle profile-img">
           {
             data.profile_img &&
-            <img src={img} alt="profile" />
+            <img src={`/resources/img/rstrnt/${data.pk}/${data.profile_img}`} alt="profile" />
           }
         </div>
         <p><strong>{data.nm}</strong><span>에 예약합니다.</span></p>
